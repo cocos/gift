@@ -1,0 +1,30 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    name: "Publish to npm registry"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.17.0'
+
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+
+      - id: publish
+        uses: JS-DevTools/npm-publish@4b07b26a2f6e0a51846e1870223e545bae91c552
+        if: github.event_name == 'release'
+        with:
+          token: ${{ secrets.NPM_PUBLISH_FOR_PUBLIC_REPO }}
+          registry: "https://registry.npmjs.org"
+
+      - if: steps.publish.outputs.type != 'none'
+        run: |
+          echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
