@@ -5,10 +5,11 @@ exports[`From triple slash directive 1`] = `
     export class Component {
     }
     export class Node {
-        getComponent<T extends Component>(constructor: __private._types_globals__Constructor<T>): T | null;
+        getComponent<T extends Component>(constructor: __private._types_globals__Constructor<T> | __private._types_globals__AbstractedConstructor<T>): T | null;
     }
     export namespace __private {
         export type _types_globals__Constructor<T = unknown> = new (...args: any[]) => T;
+        export type _types_globals__AbstractedConstructor<T = unknown> = abstract new (...args: any[]) => T;
     }
     export {};
 }
