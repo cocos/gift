@@ -769,7 +769,7 @@ export function recastTopLevelModule({
             );
         } else if (ts.isConstructorTypeNode(type)) {
             return nodeFactor.createConstructorTypeNode(
-                undefined,
+                recastModifiers(type.modifiers),
                 recastTypeParameterArray(type.typeParameters),
                 recastParameterArray(type.parameters), // parameters
                 recastTypeNode(type.type),
