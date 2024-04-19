@@ -24,6 +24,7 @@ jobs:
         with:
           token: ${{ secrets.NPM_PUBLISH_FOR_PUBLIC_REPO }}
           registry: "https://registry.npmjs.org"
+          access: public
 
       - if: steps.publish.outputs.type != 'none'
         run: |
