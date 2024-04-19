@@ -1,5 +1,5 @@
 {
-  "name": "tfig",
+  "name": "@cocos/tfig",
   "version": "3.3.3",
   "description": "Yet another tool to generate .d.ts bundle.",
   "main": "build/gift.js",
