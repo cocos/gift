@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`enum negative value export enum negative value 1`] = `
+"declare module \\"out/index\\" {
+    export enum NegativeValue {
+        AAA = \\"Bad expression <-1>\\",
+        BBB = \\"Bad expression <-2>\\",
+        CCC = 0,
+        DDD = 1,
+        EEE,
+        FFF
+    }
+    export {};
+}
+"
+`;
