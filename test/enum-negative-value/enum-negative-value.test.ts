@@ -1,6 +1,5 @@
 
 import ps from 'path';
-import fs from 'fs-extra';
 import { bundle } from '../../source/gift';
 
 describe('enum negative value export', () => {

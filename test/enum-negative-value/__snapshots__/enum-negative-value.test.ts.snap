@@ -3,12 +3,13 @@
 exports[`enum negative value export enum negative value 1`] = `
 "declare module \\"out/index\\" {
     export enum NegativeValue {
-        AAA = \\"Bad expression <-1>\\",
-        BBB = \\"Bad expression <-2>\\",
+        AAA = -1,
+        BBB = -2,
         CCC = 0,
         DDD = 1,
         EEE,
-        FFF
+        FFF = 100,
+        GGG
     }
     export {};
 }

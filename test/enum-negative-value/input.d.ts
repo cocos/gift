@@ -5,6 +5,7 @@ declare module "index" {
         CCC = 0,
         DDD = 1,
         EEE,
-        FFF,
+        FFF = 100,
+        GGG,
     }
 }
