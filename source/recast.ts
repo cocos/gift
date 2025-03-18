@@ -997,6 +997,11 @@ export function recastTopLevelModule({
             return nodeFactor.createPropertyAccessExpression(
                 recastExpression(expression.expression),
                 expression.name.text);
+        } else if (ts.isPrefixUnaryExpression(expression)) {
+            return nodeFactor.createPrefixUnaryExpression(
+                expression.operator,
+                recastExpression(expression.operand),
+            );
         } else {
             return nodeFactor.createStringLiteral(`Bad expression <${expression.getText()}>`);
         }
